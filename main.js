@@ -58,7 +58,7 @@ function mainloop(){
         }
         
         //決定ボタン判定
-        if(900<tapY && tapY<1100 && tapC==1){
+        if(900<tapY && tapY<1100 && tapC>0){
             if(150<tapX && tapX<800){
                 f++;
             }   
