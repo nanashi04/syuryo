@@ -341,10 +341,15 @@ function mainloop(){
         Sound();
         if(tmr%40 < 20)
             fText('TAP TO START', 480, 650, 80, "pink");
-        
-        if(key[32]==1 || tapC>0){
+        //難易度画面へ移行
+        if(0<tapY && tapY<1200 && tapC>0){
+            if(0<tapX && tapX<960){
+                tapC=0;
+                idx=0;
+            }
+        }
+        if(key[32]==1){
             key[32]++;
-            tapC++;
             idx=0;
         }
         break;
