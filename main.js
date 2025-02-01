@@ -140,7 +140,8 @@ function mainloop(){
         fText("SCORE RESET", 480, 800, 50, "white");
         
         //ゲームスタート
-        if(key[32]>0 || tap2[z]>0){
+        if(key[32]==1 || tap2[z]>0){
+            key[32]++;
             int(clrBlock());
             initvar();
             SE(3);
