@@ -20,7 +20,7 @@ function mainloop(){
     switch(idx){
         case 0:
         var tap2 = [0];
-        var a,b,c,d,e;
+        var a,b,c,d,e,f;
         var z=0;
         Pause();
         lineW(5);
@@ -58,9 +58,9 @@ function mainloop(){
         }
         
         //決定ボタン判定
-        if(900<tapY && tapY<1100 && tapC>0){
+        if(900<tapY && tapY<1100 && tapC==1){
             if(150<tapX && tapX<800){
-                tap2[z]++;
+                f++;
             }   
         }
         //スコアリセット判定
@@ -140,7 +140,7 @@ function mainloop(){
         fText("SCORE RESET", 480, 800, 50, "white");
         
         //ゲームスタート
-        if(key[32]==1 || tap2[z]>0){
+        if(key[32]==1 || f==1){
             key[32]++;
             int(clrBlock());
             initvar();
@@ -344,7 +344,7 @@ function mainloop(){
         
         if(key[32]==1 || tapC>0){
             key[32]++;
-            tapC=0;
+            tapC++;
             idx=0;
         }
         break;
