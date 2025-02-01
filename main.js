@@ -145,6 +145,7 @@ function mainloop(){
             int(clrBlock());
             initvar();
             SE(3);
+            stopBgm(11);
             idx = 1;
             tmr = 0;
         }
