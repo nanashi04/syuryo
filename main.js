@@ -140,7 +140,7 @@ function mainloop(){
         fText("SCORE RESET", 480, 800, 50, "white");
         
         //ゲームスタート
-        if(key[32]==1 || f==1){
+        if(key[32]==1 || f>0){
             key[32]++;
             int(clrBlock());
             initvar();
@@ -344,11 +344,13 @@ function mainloop(){
         //難易度画面へ移行
         if(0<tapY && tapY<1200 && tapC>0){
             if(0<tapX && tapX<960){
+                SE(3);
                 tapC=0;
                 idx=0;
             }
         }
         if(key[32]==1){
+            SE(3);
             key[32]++;
             idx=0;
         }
