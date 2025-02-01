@@ -333,6 +333,20 @@ function mainloop(){
             idx=1;
         }
         break;
+
+        //起動画面
+        case 7:
+        Sound();
+        if(tmr%40 < 20)
+            fText('TAP TO START', 480, 650, 80, "pink");
+        
+        if(key[32]==1 || tapC>0){
+            key[32]++;
+            tapC=0;
+            idx=0;
+        }
+        break;
+
     }
 }
 
