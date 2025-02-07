@@ -10,7 +10,7 @@ function setup(){
         "score", "cansel", "gameover 1", "gameover 2", "mainBGM", 
         "tytle", "menu", "sound"];
     for(var s=0; s<=sound.length; s++)
-        loadSound(s+1, "sound/"+sound[s]+".mp3");
+        loadSound(s+1, "music/"+sound[s]+".mp3");
 }
 
 /*------メイン------*/
@@ -18,17 +18,34 @@ function mainloop(){
     tmr++;
     drawImg(0, 0, 0);
     switch(idx){
+        //起動画面
+        case 7:
+        Sound();
+        if(tmr%40 < 20)
+            fText('TAP TO START', 480, 680, 80, "pink");
+        
+        if(0<tapY && tapY<1200 && tapC>0){
+            if(0<tapX && tapX<960){
+                tapC=0;
+                idx=0;
+                SE(3);
+            }
+        }
+        if(key[32]==1){
+            key[32]++;
+            idx=0;
+            SE(3);
+        }
+        break;
+
         case 0:
-        var tap2 = [0];
         var a,b,c,d,e,f;
-        var z=0;
         Pause();
         lineW(5);
         fText("斜め判定を入れるか", 500, 490, 80, "cyan");
         fText("難易度選択", 500, 170, 80, "cyan");
         Sound();
         BGM(11);
-
         //タップ判定上
         if(250<tapY && tapY<400 && tapC>0){
             //ノーマル
@@ -61,7 +78,7 @@ function mainloop(){
         if(900<tapY && tapY<1100 && tapC>0){
             if(150<tapX && tapX<800){
                 f=1;
-            }   
+            }
         }
         //スコアリセット判定
         if(750<tapY && tapY<850 && tapC>0){
@@ -146,9 +163,10 @@ function mainloop(){
             initvar();
             SE(3);
             stopBgm(11);
-            idx = 1;
+            idx++;
             tmr = 0;
         }
+        
         break;
         
         //ゲームプレイ
@@ -161,7 +179,7 @@ function mainloop(){
         //ゲーム終了
         if(procPzl() == 0){
             stopBgm(10);
-            idx = 2;
+            idx++;
             tmr = 0;
             tmr++;
         }
@@ -187,6 +205,7 @@ function mainloop(){
             if(tmr > 30*5){
                 idx=0;
                 stopBgm(9);
+                BGM(11);
             }   
         }
         //時間切れのとき
@@ -197,6 +216,7 @@ function mainloop(){
             BGM(8);
             if(tmr > 30*3.8){
                 stopBgm(8);
+                BGM(11);
                 idx=0;
             }
         }
@@ -337,26 +357,8 @@ function mainloop(){
         }
         break;
 
-        //起動画面
-        case 7:
-        Sound();
-        if(tmr%40 < 20)
-            fText('TAP TO START', 480, 650, 80, "pink");
-        //難易度画面へ移行
-        if(0<tapY && tapY<1200 && tapC>0){
-            if(0<tapX && tapX<960){
-                SE(3);
-                tapC=0;
-                idx=0;
-            }
-        }
-        if(key[32]==1){
-            SE(3);
-            key[32]++;
-            idx=0;
-        }
+        default:
         break;
-
     }
 }
 
