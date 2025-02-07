@@ -25,7 +25,6 @@ function mainloop(){
         fText("斜め判定を入れるか", 500, 490, 80, "cyan");
         fText("難易度選択", 500, 170, 80, "cyan");
         Sound();
-        BGM(11);
         //タップ判定上
         if(250<tapY && tapY<400 && tapC>0){
             //ノーマル
@@ -142,7 +141,6 @@ function mainloop(){
             int(clrBlock());
             initvar();
             SE(3);
-            stopBgm(11);
             idx++;
             tmr = 0;
         }
