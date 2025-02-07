@@ -29,12 +29,14 @@ function mainloop(){
                 tapC=0;
                 idx=0;
                 SE(3);
+                BGM(11);
             }
         }
         if(key[32]==1){
             key[32]++;
             idx=0;
             SE(3);
+            BGM(11);
         }
         break;
 
