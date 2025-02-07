@@ -18,28 +18,6 @@ function mainloop(){
     tmr++;
     drawImg(0, 0, 0);
     switch(idx){
-        //起動画面
-        case 7:
-        Sound();
-        if(tmr%40 < 20)
-            fText('TAP TO START', 480, 580, 80, "pink");
-        
-        if(0<tapY && tapY<1200 && tapC>0){
-            if(0<tapX && tapX<960){
-                tapC=0;
-                idx=0;
-                SE(3);
-                BGM(11);
-            }
-        }
-        if(key[32]==1){
-            key[32]++;
-            idx=0;
-            SE(3);
-            BGM(11);
-        }
-        break;
-
         case 0:
         var a,b,c,d,e,f;
         Pause();
