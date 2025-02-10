@@ -8,7 +8,7 @@ function setup(){
 
     var sound = ["delete", "mission", "start", "option", "check", 
         "score", "cansel", "gameover 1", "gameover 2", "mainBGM", 
-        "tytle", "menu", "sound"];
+        "fainal", "menu", "sound"];
     for(var s=0; s<=sound.length; s++)
         loadSound(s+1, "sound/"+sound[s]+".mp3");
 }
@@ -152,11 +152,21 @@ function mainloop(){
         drawPzl();
         drawEffect();
         Sound();
-        BGM(10);
         Pause();
+        if(gameTime>1000){
+            BGM(10);
+        }
+        else if(1000>gameTime){
+            BGM(11);
+        }
+        else{
+            stopBgm(10);
+            stopBgm(11);
+        }
         //ゲーム終了
         if(procPzl() == 0){
             stopBgm(10);
+            stopBgm(11);
             idx++;
             tmr = 0;
             tmr++;
@@ -183,7 +193,6 @@ function mainloop(){
             if(tmr > 30*5){
                 idx=0;
                 stopBgm(9);
-                BGM(11);
             }   
         }
         //時間切れのとき
@@ -194,7 +203,6 @@ function mainloop(){
             BGM(8);
             if(tmr > 30*3.8){
                 stopBgm(8);
-                BGM(11);
                 idx=0;
             }
         }
