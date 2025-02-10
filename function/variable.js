@@ -93,5 +93,6 @@ function initvar(){
     count = 5;
     col = "blue";
 
+    m_count = 0;
     b_count = 0;
 }
