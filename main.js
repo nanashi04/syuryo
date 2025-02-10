@@ -153,10 +153,10 @@ function mainloop(){
         drawEffect();
         Sound();
         Pause();
-        if(gameTime>1000){
+        if(gameTime>500){
             BGM(10);
         }
-        else if(1000>gameTime){
+        else if(500>gameTime){
             BGM(11);
         }
         else{
