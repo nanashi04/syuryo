@@ -4,10 +4,10 @@ function timeCount(){
         col="orangered";
     }
     else if(count==2){
-        col="gold";
+        col="orange";
     }
     else if(count==3){
-        col="lightgreen";
+        col="gold";
     }
     else if(count==4){
         col="green";
