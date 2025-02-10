@@ -112,7 +112,32 @@ function procPzl(){
                             kesu[y+1][x+1]=1;
                         }
                     }
-                    
+                    if(mode1==1){
+                        //　┘┘の型につながっている
+                        if(c==masu[y][x-1] && c==masu[y-1][x]){
+                            kesu[y][x]=1;
+                            kesu[y][x-1]=1;
+                            kesu[y-1][x]=1;
+                        }
+                        //　└の型につながっている
+                        if(c==masu[y][x+1] && c==masu[y-1][x]){
+                            kesu[y][x]=1;
+                            kesu[y][x+1]=1;
+                            kesu[y-1][x]=1;
+                        }
+                        //　┐の型につながっている
+                        if(c==masu[y][x-1] && c==masu[y+1][x]){
+                            kesu[y][x]=1;
+                            kesu[y][x-1]=1;
+                            kesu[y+1][x]=1;
+                        }
+                        //　┌の型につながっている
+                        if(c==masu[y][x+1] && c==masu[y+1][x]){
+                            kesu[y][x]=1;
+                            kesu[y][x+1]=1;
+                            kesu[y+1][x]=1;
+                        }
+                    }
                 }
             }
         }
