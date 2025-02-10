@@ -13,13 +13,15 @@ function timeCount(){
         col="green";
     }
     //バーを短くしていく
-    if(gameTime%4==0 && gameTime!=5000){
+    if(idx==1){
+        if(gameTime%4==0 && gameTime!=5000){
         barx1+=1;
-        //countを下げてバーの色を変える
-        if(barx1==0){
-            count--;
-            barx1=-250;
-        }      
+            //countを下げてバーの色を変える
+            if(barx1==0){
+                count--;
+                barx1=-250;
+            }      
+        }
     }
     //バーの枠
     fRect(barx, 450, barx1, 60, col);
