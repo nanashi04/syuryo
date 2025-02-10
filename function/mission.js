@@ -24,21 +24,15 @@ function mission(){
 }
 
 function MissionStart(){
-    if(gameTime==5000 || mflg>0){
+    if(gameTime==5000 || mflg>0 || random==random2){
         m_random = Math.floor(Math.random()*3)+1;
-        
         if(nan==0){
             random = Math.floor(Math.random()*4)+1;
+            random2 = Math.floor(Math.random()*4)+1;
         }
         else{
             random = Math.floor(Math.random()*6)+1;
+            random2 = Math.floor(Math.random()*6)+1;
         }
-        if(m_random==3 || random==random2){
-            if(nan==0)
-                random2 = Math.floor(Math.random()*4)+1;
-            else
-                random2 = Math.floor(Math.random()*6)+1;
-        }
-        
     }
 }
