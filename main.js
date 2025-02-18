@@ -86,7 +86,7 @@ function mainloop(){
                 mode1 = 0;
             }
         }   
-        if(d>0 || key[39]==1){
+        if(d>0 || key[40]==1){
             if(mode1==0){
                 SE(4);
                 mode1 = 1;
