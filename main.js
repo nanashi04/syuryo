@@ -80,13 +80,13 @@ function mainloop(){
             }
         }
         //斜め判定
-        if(c>0 || key[89]==1){
+        if(c>0 || key[38]==1){
             if(mode1==1){
                 SE(4);
                 mode1 = 0;
             }
         }   
-        if(d>0 || key[78]==1){
+        if(d>0 || key[39]==1){
             if(mode1==0){
                 SE(4);
                 mode1 = 1;
@@ -294,7 +294,7 @@ function mainloop(){
         Sound();
         fText("操作説明", 500, 100, 100, "lightskyblue");
         fText("難易度選択⇒  方向キー", 500, 250, 60, "white");
-        fText("斜め判定入れるか⇒  Y、N", 500, 350, 60, "white");
+        fText("斜め判定入れるか⇒  ↑、↓", 500, 350, 60, "white");
         fText("ゲームスタート⇒  SPASE", 500, 450, 60, "white");
         fText("音楽を切る⇒  S", 500, 550, 60, "white");
         fText("ホームに戻る⇒  T", 500, 700, 70, "white");
