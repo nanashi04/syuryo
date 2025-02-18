@@ -22,7 +22,7 @@ function mainloop(){
         var a,b,c,d,e,f;
         Pause();
         lineW(5);
-        fText("斜め判定にするか", 500, 490, 80, "cyan");
+        fText("判定設定", 500, 490, 80, "cyan");
         fText("難易度選択", 500, 170, 80, "cyan");
         Sound();
         //タップ判定上
@@ -294,7 +294,7 @@ function mainloop(){
         Sound();
         fText("操作説明", 500, 100, 100, "lightskyblue");
         fText("難易度選択⇒  方向キー", 500, 250, 60, "white");
-        fText("斜め判定入れるか⇒  ↑、↓", 500, 350, 60, "white");
+        fText("判定設定⇒  ↑、↓", 500, 350, 60, "white");
         fText("ゲームスタート⇒  SPASE", 500, 450, 60, "white");
         fText("音楽を切る⇒  S", 500, 550, 60, "white");
         fText("ホームに戻る⇒  T", 500, 700, 70, "white");
