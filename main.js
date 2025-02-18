@@ -252,7 +252,7 @@ function mainloop(){
         stopBgm(10);
         Sound();
         fText("操作説明", 500, 100, 100, "lightskyblue");
-        fText("ブロックの移動⇒  方向キー", 500, 250, 60, "white");
+        fText("ブロックの移動⇒  ←、↓、→", 500, 250, 60, "white");
         fText("ブロック入れ替え⇒  SPASE", 500, 350, 60, "white");
         fText("音楽を切る⇒  S", 500, 450, 60, "white");
         fText("ゲームに戻る⇒  T", 500, 600, 70, "white");
@@ -293,7 +293,7 @@ function mainloop(){
         case 5:
         Sound();
         fText("操作説明", 500, 100, 100, "lightskyblue");
-        fText("難易度選択⇒  方向キー", 500, 250, 60, "white");
+        fText("難易度選択⇒  ←、→", 500, 250, 60, "white");
         fText("判定設定⇒  ↑、↓", 500, 350, 60, "white");
         fText("ゲームスタート⇒  SPASE", 500, 450, 60, "white");
         fText("音楽を切る⇒  S", 500, 550, 60, "white");
