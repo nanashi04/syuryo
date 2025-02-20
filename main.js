@@ -346,8 +346,9 @@ function mainloop(){
             
         case 7:
         Sound();
+            fText('space puzzle', 480, 300, 80, "deepskyblue")
         if(tmr%40 < 20)
-            fText('TAP TO START', 480, 680, 80, "pink");
+            fText('TAP TO START', 480, 700, 80, "pink");
         
         if(0<tapY && tapY<1200 && tapC>0){
             if(0<tapX && tapX<960){
