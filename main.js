@@ -8,7 +8,7 @@ function setup(){
 
     var sound = ["delete", "mission", "start", "option", "check", 
         "score", "cansel", "gameover 1", "gameover 2", "mainBGM", 
-        "fainal", "menu", "sound"];
+        "fainal", "menu", "sound","tytle"];
     for(var s=0; s<=sound.length; s++)
         loadSound(s+1, "sound/"+sound[s]+".mp3");
 }
@@ -141,6 +141,7 @@ function mainloop(){
             int(clrBlock());
             initvar();
             SE(3);
+            stopBgm(14);
             idx++;
             tmr = 0;
         }
@@ -340,6 +341,27 @@ function mainloop(){
         if(key[78]>0){
             SE(7);
             idx=1;
+        }
+        break;
+            
+        case 7:
+        Sound();
+        if(tmr%40 < 20)
+            fText('TAP TO START', 480, 680, 80, "pink");
+        
+        if(0<tapY && tapY<1200 && tapC>0){
+            if(0<tapX && tapX<960){
+                tapC=0;
+                idx=0;
+                BGM(14);
+                SE(3);
+            }
+        }
+        if(key[32]==1){
+            key[32]++;
+            idx=0;
+            BGM(14);
+            SE(3);
         }
         break;
     }
