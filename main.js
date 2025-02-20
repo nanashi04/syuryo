@@ -25,6 +25,7 @@ function mainloop(){
         fText("判定設定", 500, 490, 80, "cyan");
         fText("難易度選択", 500, 170, 80, "cyan");
         Sound();
+        BGM(14);
         //タップ判定上
         if(250<tapY && tapY<400 && tapC>0){
             //ノーマル
@@ -193,7 +194,6 @@ function mainloop(){
             BGM(9);
             if(tmr > 30*5){
                 stopBgm(9);
-                BGM(14);
                 idx=0;
             }   
         }
@@ -205,7 +205,6 @@ function mainloop(){
             BGM(8);
             if(tmr > 30*3.8){
                 stopBgm(8);
-                BGM(14);
                 idx=0;
             }
         }
@@ -356,14 +355,12 @@ function mainloop(){
             if(0<tapX && tapX<960){
                 tapC=0;
                 idx=0;
-                BGM(14);
                 SE(3);
             }
         }
         if(key[32]==1){
             key[32]++;
             idx=0;
-            BGM(14);
             SE(3);
         }
         break;
