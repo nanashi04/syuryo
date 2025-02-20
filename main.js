@@ -192,8 +192,8 @@ function mainloop(){
                 fText("GAME OVER", 480, 420, 100, "violet");
             BGM(9);
             if(tmr > 30*5){
-                BGM(14);
                 stopBgm(9);
+                BGM(14);
                 idx=0;
             }   
         }
