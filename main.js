@@ -8,7 +8,7 @@ function setup(){
 
     var sound = ["delete", "mission", "start", "option", "check", 
         "score", "cansel", "gameover 1", "gameover 2", "mainBGM", 
-        "fainal", "menu", "sound","tytle"];
+        "tytle", "menu", "sound", "fainal"];
     for(var s=0; s<=sound.length; s++)
         loadSound(s+1, "sound/"+sound[s]+".mp3");
 }
@@ -18,6 +18,27 @@ function mainloop(){
     tmr++;
     drawImg(0, 0, 0);
     switch(idx){
+        case 7:
+        Sound();
+        fText('space puzzle', 480, 300, 80, "deepskyblue")
+        if(tmr%40 < 20)
+            fText('TAP TO START', 480, 700, 80, "pink");
+        
+        if(0<tapY && tapY<1200 && tapC>0){
+            if(0<tapX && tapX<960){
+                tapC=0;
+                idx=0;
+                SE(3);
+            }
+        }
+        if(key[32]==1){
+            key[32]++;
+            idx=0;
+            
+            SE(3);
+        }
+        break;
+
         case 0:
         var a,b,c,d,e,f;
         Pause();
@@ -25,7 +46,7 @@ function mainloop(){
         fText("判定設定", 500, 490, 80, "cyan");
         fText("難易度選択", 500, 170, 80, "cyan");
         Sound();
-        BGM(14);
+        BGM(11);
         //タップ判定上
         if(250<tapY && tapY<400 && tapC>0){
             //ノーマル
@@ -80,7 +101,7 @@ function mainloop(){
                 nan = 1;
             }
         }
-        //斜め
+        //斜め判定
         if(c>0 || key[38]==1){
             if(mode1==1){
                 SE(4);
@@ -143,7 +164,7 @@ function mainloop(){
             int(clrBlock());
             initvar();
             SE(3);
-            stopBgm(14);
+            stopBgm(11);
             idx++;
             tmr = 0;
         }
@@ -160,16 +181,16 @@ function mainloop(){
             BGM(10);
         }
         else if(500>gameTime){
-            BGM(11);
+            BGM(14);
         }
         else{
             stopBgm(10);
-            stopBgm(11);
+            stopBgm(14);
         }
         //ゲーム終了
         if(procPzl() == 0){
             stopBgm(10);
-            stopBgm(11);
+            stopBgm(14);
             idx++;
             tmr = 0;
             tmr++;
@@ -345,26 +366,5 @@ function mainloop(){
             idx=1;
         }
         break;
-            
-        case 7:
-        Sound();
-            fText('space puzzle', 480, 300, 80, "deepskyblue")
-        if(tmr%40 < 20)
-            fText('TAP TO START', 480, 700, 80, "pink");
-        
-        if(0<tapY && tapY<1200 && tapC>0){
-            if(0<tapX && tapX<960){
-                tapC=0;
-                idx=0;
-                SE(3);
-            }
-        }
-        if(key[32]==1){
-            key[32]++;
-            idx=0;
-            SE(3);
-        }
-        break;
     }
 }
-
