@@ -192,8 +192,9 @@ function mainloop(){
                 fText("GAME OVER", 480, 420, 100, "violet");
             BGM(9);
             if(tmr > 30*5){
-                idx=0;
+                BGM(14);
                 stopBgm(9);
+                idx=0;
             }   
         }
         //時間切れのとき
@@ -204,6 +205,7 @@ function mainloop(){
             BGM(8);
             if(tmr > 30*3.8){
                 stopBgm(8);
+                BGM(14);
                 idx=0;
             }
         }
