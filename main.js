@@ -42,12 +42,12 @@ function mainloop(){
         
         //タップ判定下
         if(560<tapY && tapY<710 && tapC>0){
-            //Yes
+            //斜め
             if(50<tapX && tapX<400){
                 c=1;
                 d=0;        
             }
-            //No
+            //かぎ型
             if(550<tapX && tapX<900){
                 c=0;
                 d=1;
@@ -80,13 +80,14 @@ function mainloop(){
                 nan = 1;
             }
         }
-        //斜め判定
+        //斜め
         if(c>0 || key[38]==1){
             if(mode1==1){
                 SE(4);
                 mode1 = 0;
             }
         }   
+        //かぎ型
         if(d>0 || key[40]==1){
             if(mode1==0){
                 SE(4);
@@ -109,11 +110,11 @@ function mainloop(){
         else{
             fRect(550, 250, 350, 150, "blue");
         }
-        //Yes
+        //斜め
         if(mode1==0){
             fRect(50, 560, 350, 150, "blue");
         }
-        //No
+        //かぎ型
         else{
             fRect(550, 560, 350, 150, "blue");
         }
